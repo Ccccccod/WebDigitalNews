@@ -1,0 +1,4 @@
+select a.* from (select *, row_number() Over(order by article.id) as `row` from article where title like " + searchStr + " ) as a "
+                + "where a.row >= " + f + " and a.row <= " + t + ";
+
+select * from article order by date desc limit 1 ;
